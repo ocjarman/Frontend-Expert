@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Hello from "./components/Props/Hello";
+import Comment from "./components/Props/Comment";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Hello name="Olivia" />
+      <Hello name="Shane" />
+      <Hello />
+      {/* having components inside components, and having children is known as 'component composition' */}
+      <Comment username="Olivia" time={new Date().toDateString()}>
+        <h1>Hello World</h1>
+        <p>This is a comment</p>
+      </Comment>
     </div>
   );
 }
