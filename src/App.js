@@ -2,8 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import Hello from "./components/Props/Hello";
 import Comment from "./components/Props/Comment";
+import Button from "./Button";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Hello name="Olivia" />
@@ -14,8 +15,11 @@ function App() {
         <h1>Hello World</h1>
         <p>This is a comment</p>
       </Comment>
+      <Button onClick={handleClick}>Click me</Button>
     </div>
   );
 }
 
-export default App;
+const handleClick = (event) => {
+  console.log(event.nativeEvent);
+};
