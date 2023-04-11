@@ -4,6 +4,7 @@ import Hello from "./components/Props/Hello";
 import Comment from "./components/Props/Comment";
 import Button from "./Button";
 import { useState, useReducer } from "react";
+import NewCounterDemo from "./components/Props/NewCounterDemo";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -17,26 +18,28 @@ function reducer(state, action) {
 }
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const [value, setValue] = useState("");
   const [state, dispatch] = useReducer(reducer, { count: 0 });
-
+  const [isShown, setIsShown] = useState(true);
   return (
     <div className="App">
       <Hello name="Olivia" />
-      <input
+      <button onClick={() => setIsShown(!isShown)}>
+        {isShown ? "Hide Counter" : "Show Counter"}
+      </button>
+      {isShown ? <NewCounterDemo /> : null}
+      {/* <input
         type="text"
         value={value}
         onChange={(event) => setValue(event.target.value)}
-      />
+      /> */}
       <Counter
         count={state.count}
         onClick={() => dispatch({ type: "increment", num: 1 })}
       />
-      <Counter
+      {/* <Counter
         count={state.count}
         onClick={() => dispatch({ type: "decrement", num: 10 })}
-      />
+      /> */}
       {/* <Hello name="Shane" />
       <Hello /> */}
       {/* having components inside components, and having children is known as 'component composition' */}
