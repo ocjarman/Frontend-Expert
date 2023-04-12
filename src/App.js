@@ -5,6 +5,7 @@ import Comment from "./components/Props/Comment";
 import Button from "./Button";
 import { useState, useReducer, useRef } from "react";
 import NewCounterDemo from "./components/Props/NewCounterDemo";
+import InputRefPractice from "./components/Props/InputRefPractice";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -39,6 +40,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <InputRefPractice />
       <div className="refPractice">
         <button onClick={startTimer}>Start</button>
         <button onClick={stopTimer}>Stop</button>
