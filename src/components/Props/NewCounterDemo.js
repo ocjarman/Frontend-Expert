@@ -26,7 +26,7 @@ const NewCounterDemo = () => {
 
   useEffect(() => {
     console.log("render");
-  });
+  }, []);
 
   return (
     <div style={{ border: "3px solid red", padding: "20px" }}>
