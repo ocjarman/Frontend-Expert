@@ -61,6 +61,13 @@ export default function App() {
       >
         Reset
       </button>
+      <button
+        onClick={() => {
+          counterRef.current.addAlot();
+        }}
+      >
+        add a ton
+      </button>
       {/* <InputRefPractice /> */}
       {/* <div className="refPractice">
         <button onClick={startTimer}>Start</button>

@@ -9,6 +9,7 @@ export default forwardRef(function ImperativeDemoCounter(props, ref) {
     () => {
       return {
         reset: () => setCount(0),
+        addAlot: () => setCount(count + 5000),
       };
     }
     //if only complete on mount, add empty dependency array
